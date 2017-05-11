@@ -1,6 +1,6 @@
 {
   "name": "homeassistant",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Home Assistant Node.js library",
   "main": "lib/HomeAssistant.js",
   "scripts": {
