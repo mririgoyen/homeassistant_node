@@ -2,7 +2,7 @@ node-homeassistant
 ==================
 
 [Home Assistant](https://home-assistant.io/) API Node.js library.
-It wraps the [Home Assistant RESTful API](https://home-assistant.io/developers/rest_api/) in to easy-to-use, Promise-based functions.
+It wraps the [Home Assistant RESTful API](https://home-assistant.io/developers/rest_api/) in easy-to-use, Promise-based functions.
 
 Install
 =======
