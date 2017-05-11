@@ -1,2 +1,132 @@
-# homeassistant_node
-Home Assistant Node.js library
+node-homeassistant
+==================
+
+[Home Assistant](https://home-assistant.io/) API Node.js library.
+It wraps the [Home Assistant RESTful API](https://home-assistant.io/developers/rest_api/) in easy-to-use, Promise-based functions.
+
+Install
+=======
+```bash
+npm install homeassistant
+```
+
+Usage
+=====
+```javascript
+const HomeAssistant = require('homeassistant');
+const hass = new HomeAssistant({
+  host: 'http://example.com', // Optional, defaults to http://localhost
+  port: 8123, // Optional, defaults to 8123
+  password: 'api_password' // Optional
+});
+
+hass.services.call('toggle', 'switch', 'lights_3_0')
+  .then(res => console.log('Toggled lights', res))
+  .catch(err => console.error(err));
+```
+
+Interface
+=========
+All functions return Promises.
+
+Configuration
+-------------
+```javascript
+// Returns if the API is up and running
+hass.status();
+
+// Returns the current configuration
+hass.config();
+
+// Returns basic information about the Home Assistant instance
+hass.discoveryInfo();
+
+// Returns all data needed to bootstrap Home Assistant
+hass.bootstrap();
+```
+
+Camera
+------
+```javascript
+// Returns the image from the specified camera entity
+hass.camera.image('entityId');
+```
+
+Events
+------
+```javascript
+// Returns an array of event objects
+hass.events.list();
+
+// Fires an event
+// Requires the event name and an event data JSON object
+hass.events.fire('call_service', {
+  domain: 'switch',
+  service: 'toggle',
+  service_data: {
+    entity_id: 'switch.lights_3_0'
+  }
+});
+```
+
+History
+-------
+```javascript
+// Returns an array of state changes in the past
+// Requires a datetime in YYYY-MM-DDTHH:MM:SSZ format
+// An optional entityId can be provided to filter the results
+hass.history.state('2017-05-01T12:00:00-04:00', 'sensor.temperature');
+```
+
+Logs
+----
+```javascript
+// Returns all errors logged during the current session of Home Assistant
+hass.logs.errors();
+```
+
+Services
+--------
+```javascript
+// Returns an array of all service objects
+hass.services.list();
+
+// Calls a service
+// Requires the service, the domain, and the entity
+// Alternatively, you can provide a service data JSON object as the third parameter
+hass.services.call('toggle', 'switch', 'lights_3_0');
+hass.services.call('toggle', 'switch', {
+  entity_id: 'switch.lights_3_0'
+});
+```
+
+States
+------
+```javascript
+// Returns an array of all state objects
+hass.states.list();
+
+// Returns a state object for a specified entity
+// Requires the domain and entity
+hass.states.get('sensor', 'temperature');
+
+// Updates or creates the current state of an entity
+// Requires the domain, entity, and a JSON object with a `state` attribute
+hass.states.update('sensor', 'temperature', {
+  state: 80,
+  attributes: {
+    unit_of_measurement: '°F'
+  }
+});
+```
+
+Templates
+---------
+```javascript
+// Renders a Home Assistant template: https://home-assistant.io/topics/templating/
+hass.templates.render('Mike is at {{ states("device_tracker.mike") }}.');
+```
+
+License
+-------
+MIT
