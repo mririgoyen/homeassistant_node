@@ -4,6 +4,8 @@ node-homeassistant
 [Home Assistant](https://home-assistant.io/) API Node.js library.
 It wraps the [Home Assistant RESTful API](https://home-assistant.io/developers/rest_api/) in easy-to-use, Promise-based functions.
 
+[![NPM Badge](https://nodei.co/npm/homeassistant.png?downloads=true&stars=true)](https://npmjs.org/package/homeassistant)
+
 Install
 =======
 ```bash
