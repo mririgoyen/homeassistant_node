@@ -17,9 +17,21 @@ Usage
 ```javascript
 const HomeAssistant = require('homeassistant');
 const hass = new HomeAssistant({
-  host: 'http://example.com', // Optional, defaults to http://localhost
-  port: 8123, // Optional, defaults to 8123
-  password: 'api_password' // Optional
+  // Your Home Assistant host
+  // Optional, defaults to http://locahost
+  host: 'http://example.com',
+
+  // Your Home Assistant port number
+  // Optional, defaults to 8123
+  port: 8123,
+
+  // Your Home Assistant API password
+  // Optional
+  password: 'api_password',
+
+  // Ignores SSL certificate errors, use with caution
+  // Optional, defaults to false
+  ignoreCert: false
 });
 
 hass.services.call('toggle', 'switch', 'lights_3_0')
