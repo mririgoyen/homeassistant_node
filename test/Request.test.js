@@ -47,6 +47,14 @@ describe('Home Assistant - Request class', () => {
   });
 
   describe('_request', () => {
+    it('should properly set rejectUnauthorized option if provided', () => {
+      const Request = new module({ base: 'http://localhost', rejectUnauthorized: true });
+      return Request._get('/path')
+        .then(res => {
+          expect(res.rejectUnauthorized).to.equal(true);
+        });
+    });
+
     it('should properly set the x-ha-access header if an API password is set', () => {
       const Request = new module({ base: 'http://localhost', password: 'password' });
       return Request._get('/path')
