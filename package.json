@@ -23,11 +23,12 @@
   },
   "homepage": "https://github.com/goyney/homeassistant_node#readme",
   "devDependencies": {
-    "chai": "~3.5.0",
-    "mocha": "~3.3.0"
+    "chai": "~4.1.2",
+    "mocha": "~5.2.0",
+    "rewire": "^4.0.1"
   },
   "dependencies": {
-    "moment": "~2.18.1",
-    "request": "~2.81.0"
+    "moment": "~2.22.2",
+    "request": "~2.87.0"
   }
 }
