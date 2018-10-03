@@ -1,6 +1,6 @@
 {
   "name": "homeassistant",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Home Assistant Node.js library",
   "main": "lib/HomeAssistant.js",
   "scripts": {
@@ -23,12 +23,12 @@
   },
   "homepage": "https://github.com/goyney/homeassistant_node#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "rewire": "^4.0.1"
   },
   "dependencies": {
     "moment": "^2.22.2",
-    "request": "^2.87.0"
+    "request": "^2.88.0"
   }
 }
