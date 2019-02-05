@@ -25,9 +25,13 @@ const hass = new HomeAssistant({
   // Optional, defaults to 8123
   port: 8123,
 
-  // Your Home Assistant API password
+  // Your long lived access token generated on your profile page.
   // Optional
-  password: 'api_password',
+  token: '810a8c43-f22e-4ec4-b34e-c1e4741d4802',
+
+  // Your Home Assistant Legacy API password
+  // Optional
+  // password: 'api_password',
 
   // Ignores SSL certificate errors, use with caution
   // Optional, defaults to false
