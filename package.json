@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/goyney/homeassistant_node.git"
+    "url": "git+ssh://git@github.com/mririgoyen/homeassistant_node.git"
   },
   "keywords": [
     "home",
@@ -16,12 +16,12 @@
     "home-assistant",
     "homeassistant"
   ],
-  "author": "Michael Irigoyen <goyney@gmail.com>",
+  "author": "Michael Irigoyen <michael@irigoyen.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/goyney/homeassistant_node/issues"
+    "url": "https://github.com/mririgoyen/homeassistant_node/issues"
   },
-  "homepage": "https://github.com/goyney/homeassistant_node#readme",
+  "homepage": "https://github.com/mririgoyen/homeassistant_node#readme",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.1.2",
